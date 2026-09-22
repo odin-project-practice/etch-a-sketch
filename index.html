@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#e74335" />
+    <meta name="description" content="A little room to make something. Draw pixel by pixel with black ink, random colors, and progressive shading." />
+    <title>Etch-a-Sketch — a little room to make something</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23e74335'/%3E%3Cpath d='M8 8h16v16H8z' fill='%23faf9f5'/%3E%3Cpath d='M12 12h4v4h4v4h-8z' fill='%23212121'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./script.js"></script>
+  </head>
+  <body>
+    <main class="studio">
+      <header class="studio-header">
+        <a class="wordmark" href="./" aria-label="Etch-a-Sketch home"><span class="brand-mark" aria-hidden="true">✳</span> LITTLE EXPERIMENTS</a>
+        <span class="edition">NO. 001 / ETCH-A-SKETCH</span>
+      </header>
+
+      <section class="workspace" aria-labelledby="page-title">
+        <aside class="tool-panel">
+          <p class="eyebrow">A CLASSIC, PIXEL BY PIXEL.</p>
+          <h1 id="page-title">Etch-a-<br /><span>Sketch.</span></h1>
+          <p class="intro">A little room to make something.<br />Move your cursor. Follow a line.<br />See where it goes.</p>
+
+          <fieldset class="ink-options">
+            <legend class="control-label">01 <span>CHOOSE YOUR INK</span></legend>
+            <label class="ink-option"><input type="radio" name="ink" value="black" checked /><span class="ink-swatch black-swatch" aria-hidden="true"></span><span>Black ink</span><span class="selection-mark" aria-hidden="true">✓</span></label>
+            <label class="ink-option"><input type="radio" name="ink" value="rainbow" /><span class="ink-swatch rainbow-swatch" aria-hidden="true"></span><span>Random color</span><span class="selection-mark" aria-hidden="true">✓</span></label>
+          </fieldset>
+
+          <div class="shading-option">
+            <label for="shading"><span>Build up the shade</span><span class="switch"><input id="shading" type="checkbox" /><span class="switch-track" aria-hidden="true"></span></span></label>
+            <p>Ten passes from light to fully inked.</p>
+          </div>
+
+          <div class="size-control">
+            <p class="control-label">02 <span>SET YOUR RESOLUTION</span></p>
+            <button id="resize-button" class="size-button" type="button"><span id="size-label">16 × 16</span><span>Change grid <span aria-hidden="true">↗</span></span></button>
+            <p class="control-note">1–100 squares per side. Starts a fresh sketch.</p>
+          </div>
+
+          <button id="clear-button" class="clear-button" type="button"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" /></svg> Clear the canvas</button>
+          <p class="start-again">Every great idea starts with a blank.</p>
+        </aside>
+
+        <div class="drawing-area">
+          <div class="canvas-topline"><span><span class="live-dot" aria-hidden="true"></span> YOUR CANVAS</span><span id="canvas-count">256 little possibilities</span></div>
+          <div class="canvas-frame">
+            <div id="drawing-grid" class="drawing-grid" role="group" tabindex="0" aria-label="Drawing canvas, 16 by 16 squares" aria-describedby="drawing-help keyboard-help"></div>
+          </div>
+          <div class="canvas-bottomline"><p id="drawing-help"><span aria-hidden="true">↳</span> Hover to draw. On touchscreens, drag your finger.</p><span class="canvas-signature" aria-hidden="true">make your mark.</span></div>
+          <p id="keyboard-help" class="keyboard-help">Keyboard: focus the canvas, use arrow keys to move, and press Space to ink a square.</p>
+          <p id="status" class="sr-only" aria-live="polite" aria-atomic="true">Your canvas is ready.</p>
+        </div>
+      </section>
+
+      <footer class="studio-footer"><span>MADE FOR THE JOY OF MAKING.</span><a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch" target="_blank" rel="noopener noreferrer">THE ODIN PROJECT <span aria-hidden="true">↗</span></a></footer>
+    </main>
+  </body>
+</html>
